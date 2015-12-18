@@ -11,6 +11,7 @@ namespace App\Repository\Interfaces;
 
 interface ISummoner
 {
+    public function construct();
     public function findSummonerIdByName($name , $region);
-    public function findSummonerLevel($name,$region);
+    public function findSummonerLevelByName($name,$region);
 }

@@ -8,7 +8,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "guzzlehttp/guzzle": "^6.1",
-
+        "symfony/psr-http-message-bridge": "0.2"
 
     },
 
