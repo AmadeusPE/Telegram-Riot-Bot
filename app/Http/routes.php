@@ -5,3 +5,4 @@ Route::get('/level/{summoner_name}/{region}','Apis\Consume\Riot\RiotSummonerCont
 Route::get('/tier/{summoner_name}/{region}','Apis\Consume\Riot\RiotSummonerController@findSummonerTierById');
 Route::get('/champion/{summoner_name}/{region}','Apis\Consume\Riot\RiotSummonerController@findCurrentChampIdBySummonerId');
 Route::post('/slack/response','Apis\Consume\Slack\SlackController@getResponse');
+

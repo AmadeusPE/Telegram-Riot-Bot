@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Apis\Consume\Slack;
 
-
-use Request;
+use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -15,9 +14,9 @@ class SlackController extends Controller
     public function __construct( )
     {
     }
-    public function getResponse()
+    public function getResponse(Request $request)
     {
-          $input=Request::all();
+          $input= $request->all();
           $base_path=base_path();
           File::put($base_path.'/Text/response.txt',$input);
     }
