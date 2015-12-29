@@ -6,9 +6,9 @@
  * Time: 8:54
  */
 
-namespace app\Repository\Implementation;
+namespace app\Repository\RiotApi\Implementation;
 use GuzzleHttp;
-use App\Repository\Interfaces\ILeague;
+use App\Repository\RiotApi\Interfaces\ILeague;
 
 
 

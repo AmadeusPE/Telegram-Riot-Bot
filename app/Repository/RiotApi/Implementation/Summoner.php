@@ -6,10 +6,10 @@
  * Time: 8:48
  */
 
-namespace App\Repository\Implementation;
+namespace app\Repository\RiotApi\Implementation;
 
 use GuzzleHttp;
-use App\Repository\Interfaces\ISummoner;
+use App\Repository\RiotApi\Interfaces\ISummoner;
 
 class Summoner implements ISummoner
 {

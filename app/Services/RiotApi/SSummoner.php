@@ -6,9 +6,9 @@
  * Time: 9:30
  */
 
-namespace app\Services;
+namespace app\Services\RiotApi;
 
-use App\Repository\Interfaces\ISummoner;
+use App\Repository\RiotApi\Interfaces\ISummoner;
 
 class SSummoner
 {

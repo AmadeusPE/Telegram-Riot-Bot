@@ -6,7 +6,7 @@
  * Time: 14:49
  */
 
-namespace App\Repository\Interfaces;
+namespace App\Repository\RiotApi\Interfaces;
 
 
 interface ISummoner

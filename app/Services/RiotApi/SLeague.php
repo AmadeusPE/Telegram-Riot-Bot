@@ -6,8 +6,8 @@
  * Time: 9:19
  */
 
-namespace app\Services;
-use App\Repository\Interfaces\ILeague;
+namespace app\Services\RiotApi;
+use App\Repository\RiotApi\Interfaces\ILeague;
 
 class SLeague
 {

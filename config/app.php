@@ -145,6 +145,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RiotServiceProvider::class,
+        App\Providers\SlackServiceProvider::class,
 
     ],
 

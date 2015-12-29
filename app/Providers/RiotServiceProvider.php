@@ -14,9 +14,9 @@ class RiotServiceProvider extends  ServiceProvider
 {
     public function register()
     {
-        $this->app->bind('App\Repository\Interfaces\ISummoner', 'App\Repository\Implementation\Summoner');
-        $this->app->bind('App\Repository\Interfaces\ILeague', 'App\Repository\Implementation\League');
-        $this->app->bind('App\Repository\Interfaces\ICurrent_Game', 'App\Repository\Implementation\Current_Game');
+        $this->app->bind('App\Repository\RiotApi\Interfaces\ISummoner', 'App\Repository\RiotApi\Implementation\Summoner');
+        $this->app->bind('App\Repository\RiotApi\Interfaces\ILeague', 'App\Repository\RiotApi\Implementation\League');
+        $this->app->bind('App\Repository\RiotApi\Interfaces\ICurrentGame', 'App\Repository\RiotApi\Implementation\CurrentGame');
     }
 
 }

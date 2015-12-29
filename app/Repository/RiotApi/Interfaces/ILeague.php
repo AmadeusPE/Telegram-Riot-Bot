@@ -6,7 +6,7 @@
  * Time: 8:29
  */
 
-namespace App\Repository\Interfaces;
+namespace App\Repository\RiotApi\Interfaces;
 
 
 interface ILeague

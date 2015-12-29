@@ -6,12 +6,13 @@
  * Time: 11:36
  */
 
-namespace app\Repository\Implementation;
-use App\Repository\Interfaces\ICurrent_Game;
+namespace app\Repository\RiotApi\Implementation;
+
+use App\Repository\RiotApi\Interfaces\ICurrentGame;
 use GuzzleHttp;
 
 
-class Current_Game implements  ICurrent_Game
+class CurrentGame implements  ICurrentGame
 {
     private $client;
     public  function  __construct()
@@ -36,7 +37,7 @@ class Current_Game implements  ICurrent_Game
     public  function  findChampByChampId($champ_id , $region)
     {
         $this->client = new GuzzleHttp\Client();
-        $riot_response=$this->client->request('GET','https://global.api.pvp.net/api/lol/static-data/'.$region.'/v1.2/champion/'.$champ_id.'?api_key=50257f98-4d3b-4fbe-8b1c-0e367cbf8ee1');
+        $riot_response=$this->client->request('GET','https://global.api.pvp.net/api/lol/static-data/'.$region.'/v1.2/champion/'.$champ_id.'?api_key='.env('KEY'));
         $json_response = json_decode($riot_response->getBody());
         $champ_name=$json_response->name;
         return $champ_name;

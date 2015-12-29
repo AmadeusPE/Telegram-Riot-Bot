@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Services\SSummoner;
-use App\Services\SLeague;
-use App\Services\SCurrent_Game;
+use App\Services\RiotApi\SSummoner;
+use App\Services\RiotApi\SLeague;
+use App\Services\RiotApi\SCurrentGame;
 
 class RiotSummonerController extends Controller
 {
@@ -22,7 +22,7 @@ class RiotSummonerController extends Controller
     {
         $this->Summoner= \App::make(SSummoner::class);
         $this->League = \App::make(SLeague::class);
-        $this->Current_Game = \App::make(SCurrent_Game::class);
+        $this->Current_Game = \App::make(SCurrentGame::class);
 
     }
     public  function  findPlatformIdByRegion($region)
@@ -48,26 +48,21 @@ class RiotSummonerController extends Controller
             case "ru":
                 return "RU";
             case "tr":
-                return "tTR1";
+                return "TR1";
         }
 
         return "This region is no valid , plz try again";
     }
-
     public  function findSummonerIdByName($summoner_name , $region)
     {
-
         $this->summoner_id= $this->Summoner->findSummonerIdByName($summoner_name,$region);
         return $this->summoner_id;
     }
-
     public  function findSummonerLevelByName( $summoner_name, $region)
     {
-
         $this->summoner_level= $this->Summoner->findSummonerLevelByName($summoner_name,$region);
         return  $this->summoner_level;
     }
-
     public function findSummonerTierById($summoner_name , $region)
     {
         $summoner_id=$this->findSummonerIdByName($summoner_name,$region);
@@ -78,13 +73,13 @@ class RiotSummonerController extends Controller
     {
         $platform_id = $this->findPlatformIdByRegion($region);
         $summoner_id=$this->findSummonerIdByName($summoner_name,$region);
-        $summoner_current_champ_id=$this->Current_Game->findCurrentChampIdBySummonerId($summoner_id,$platform_id,$region);
+        $summoner_current_champ_id=$this->CurrentGame->findCurrentChampIdBySummonerId($summoner_id,$platform_id,$region);
         return $summoner_current_champ_id;
     }
     public  function  findCurrentChampBySummonerName($summoner_name,$region)
     {
         $current_champ_id=$this->findCurrentChampIdBySummonerId($summoner_name,$region);
-        $current_champ=$this->Current_Game->findChampByChampId($current_champ_id , $region);
+        $current_champ=$this->CurrentGame->findChampByChampId($current_champ_id , $region);
         return $current_champ;
     }
 }

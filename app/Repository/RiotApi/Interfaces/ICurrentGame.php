@@ -6,10 +6,10 @@
  * Time: 14:09
  */
 
-namespace App\Repository\Interfaces;
+namespace App\Repository\RiotApi\Interfaces;
 
 
-interface ICurrent_Game
+interface ICurrentGame
 {
     public  function  findCurrentChampIdBySummonerId($summoner_id,$platform_id,$region);
     public  function  findChampByChampId($champ_id , $region);
