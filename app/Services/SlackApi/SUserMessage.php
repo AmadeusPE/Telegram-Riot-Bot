@@ -13,14 +13,4 @@ use App\Repository\SlackApi\Interfaces\ISlackUserMessage;
 class SUserMessage
 {
 
-    public function __construct(ISlackUserMessage $ISlackUserMessage)
-    {
-        $this->ISlackUserMessage = $ISlackUserMessage;
-
-    }
-    public function  getUserMessage()
-    {
-        $user_message=$this->ISlackUserMessage->getUserMessage();
-        return $user_message;
-    }
 }
